@@ -86,6 +86,7 @@ module.exports = function(args, cb) {
     ignore: ignore,
     verbose: verbose,
     entry: args.entry,
-    systemEntry: args['system-entry']
+    systemEntry: args['system-entry'],
+    output: output
   }, cb);
 };
