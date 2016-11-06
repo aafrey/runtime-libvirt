@@ -26,6 +26,11 @@ module.exports = function(args, cb) {
     return cb('invalid directory specified');
   }
 
+  var output = '';
+  if (args['output']) {
+    output = args['output'];
+  }
+
   var addDirs = [];
   if (args['add-dir']) {
     addDirs = Array.isArray(args['add-dir']) ? args['add-dir'] : [args['add-dir']];
