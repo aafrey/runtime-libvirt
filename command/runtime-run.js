@@ -35,10 +35,9 @@ module.exports = function(args, cb) {
   }
 
   // If a config.json file exists, parse it to JSON and use it for qemuCommandAppend
-  if ( fs.existsSync('config.json') ) {
-    var configBuffer = fs.readFileSync('config.json');
+  if (args.config) {
+    var configBuffer = fs.readFileSync(args.config);
     var configJSON = JSON.parse(configBuffer);
-    //console.log(configJSON);
   }
 
   var qemuNet = args.net;
@@ -58,7 +57,6 @@ module.exports = function(args, cb) {
   var qemuNographic = !!args.nographic;
   var qemuVirtioRng = !!args['virtio-rng'];
   var qemuCommandAppend = configJSON || args['append-qemu'] || '';
-  //console.log(qemuCommandAppend);
   var dryRun = !!args['dry-run'];
   var verbose = !!args.verbose;
 
