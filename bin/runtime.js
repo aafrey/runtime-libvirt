@@ -73,6 +73,11 @@ var mkimgArgs = [
     description: 'Label of the new image, defaults to "RUNTIMEJS"' }
 ];
 
+var psArgs = [
+  { name: 'a', type: 'string', default: '',
+    description: 'list all registered runtime.js VM\'s' }
+]
+
 var cmds = [{
   name: 'start',
   description: 'Quickly start runtime.js VM using current directory',
@@ -103,6 +108,15 @@ var cmds = [{
 }, {
   name: 'help',
   description: 'Print this usage help'
+}, {
+  name: 'deploy',
+  description: 'use libvirt to manage VM deployment',
+  //args: deployArgs,
+  mainArg: { name: 'ramdisk', description: 'Ramdisk/initrd bundle file to use' }
+},{
+  name: 'ps',
+  description: 'list all runtime VM\'s'
+  //args: psArgs,
 }];
 
 function help() {
