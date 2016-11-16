@@ -73,6 +73,11 @@ var mkimgArgs = [
     description: 'Label of the new image, defaults to "RUNTIMEJS"' }
 ];
 
+var deployArgs = [
+  { name:'domain', type: 'string', default: '',
+    description: 'libvirt domain .xml' }
+]
+
 var psArgs = [
   { name: 'a', type: 'string', default: '',
     description: 'list all registered runtime.js VM\'s' }
@@ -111,12 +116,16 @@ var cmds = [{
 }, {
   name: 'deploy',
   description: 'use libvirt to manage VM deployment',
-  //args: deployArgs,
+  args: deployArgs,
   mainArg: { name: 'ramdisk', description: 'Ramdisk/initrd bundle file to use' }
 },{
   name: 'ps',
-  description: 'list all runtime VM\'s'
-  //args: psArgs,
+  description: 'list all runtime VM\'s',
+  args: psArgs
+}, {
+  name: 'destroy',
+  description: 'destroy VM by name',
+  mainArg: { name: 'domain', description: 'Libvirt domain to destroy'}
 }];
 
 function help() {
