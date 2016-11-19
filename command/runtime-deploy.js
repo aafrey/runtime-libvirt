@@ -15,7 +15,8 @@ module.exports = function (args, cb) {
       if (args.domain) {
         hyper.createDomain(xml, (err, domain) => {
           if (!err) {
-            console.log("Domain created...");
+            var dom = domain.getName( (err, name) => { return name; });
+            console.log(`Domain ${dom} created...`);
           }
         });
       }
