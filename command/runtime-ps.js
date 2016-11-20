@@ -3,32 +3,31 @@
 var libvirt = require('libvirt');
 var hyper = new libvirt.Hypervisor('qemu:///system');
 
+var domainName = (val) => {
+  for (var i = 0; i < val.length; i++) {
+    hyper.lookupDomainById( val[i], (err, domain) => {
+      domain.getName( (err, name) => {
+        console.log(name);
+      });
+    });
+  }
+}
+
 module.exports = function (args, cb) {
   hyper.connect( err => {
     if (!err) {
-
-      console.log("Connected to Qemu");
+      console.log("----------------------------------------------------");
 
       if (args.a) {
-        console.log("listing all runtime.js VM's...");
+        console.log("listing all defined runtime.js VM's...");
 
-        var domainIds = new Promise( (resolve, reject) => {
-          hyper.listDefinedDomains( (err, domains) => {
-            resolve(domains);
-          });
-        });
-
-        domainIds.then( val => {
-          for (var j = 0; j < val.length; j++) {
-            hyper.lookupDomainById(parseInt(val[j]), (err, domain) => {
-              domain.getName( (err, name) => {
-                console.log(name);
-              });
-            });
-          };
+        hyper.listDefinedDomains( (err, domains) => {
+          for (var i = 0; i < domains.length; i++) {
+            console.log(domains[i]);
+          }
         });
       } else {
-        
+
         console.log("listing all runtime.js VM's currently running...");
 
         var domainIds = new Promise( (resolve, reject) => {
@@ -37,16 +36,10 @@ module.exports = function (args, cb) {
           });
         });
 
-        domainIds.then( val => {
-          for (var j = 0; j < val.length; j++) {
-            hyper.lookupDomainById(parseInt(val[j]), (err, domain) => {
-              domain.getName( (err, name) => {
-                console.log(name);
-              });
-            });
-          };
-        });
+        domainIds.then( val => { domainName(val); });
+
       };
+      console.log("----------------------------------------------------");
     };
   });
 }

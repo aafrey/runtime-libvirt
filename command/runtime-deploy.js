@@ -21,10 +21,6 @@ module.exports = function (args, cb) {
         });
       }
     }
-    //hyper.disconnect( err => {
-      //if (!err) {
-        //console.log("Disconnected from Qemu")
-      //}
-    //})
+
   });
 }

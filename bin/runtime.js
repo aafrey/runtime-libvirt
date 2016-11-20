@@ -79,7 +79,7 @@ var deployArgs = [
 ]
 
 var psArgs = [
-  { name: 'a', type: 'string', default: '',
+  { name: 'a', type: 'boolean', default: false,
     description: 'list all registered runtime.js VM\'s' }
 ]
 
