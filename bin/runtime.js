@@ -74,14 +74,20 @@ var mkimgArgs = [
 ];
 
 var deployArgs = [
-  { name:'domain', type: 'string', default: '',
-    description: 'libvirt domain .xml' }
-]
+  { name: 'domain', type: 'string', default: '',
+    description: 'libvirt domain .xml' },
+  { name: 'name', type: 'string', default: '',
+    description: 'give your VM a name' },
+  { name: 'scale', type: 'number', default: 0,
+    description: 'start multiple VM instances at the same time'},
+  { name: 'd', type: 'boolean', default: false,
+    description: 'boot VM from predefined image. requires a "--name" argument.'}
+];
 
 var psArgs = [
   { name: 'a', type: 'boolean', default: false,
     description: 'list all registered runtime.js VM\'s' }
-]
+];
 
 var cmds = [{
   name: 'start',

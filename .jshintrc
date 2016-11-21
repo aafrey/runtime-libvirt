@@ -1,0 +1,9 @@
+{
+  "esversion": 6,
+  "globals": {
+    "console": true,
+    "require": true,
+    "Buffer": true,
+    "module": true
+  }
+}

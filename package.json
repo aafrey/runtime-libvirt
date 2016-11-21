@@ -31,6 +31,7 @@
     "pad": "^1.0.0",
     "pretty-bytes": "^2.0.1",
     "progress-stream": "^1.1.1",
+    "randomstring": "^1.1.5",
     "request": "^2.65.0",
     "shelljs": "^0.5.3",
     "single-line-log": "^1.0.1",
