@@ -1,7 +1,7 @@
 'use strict'
 
 var libvirt = require('libvirt');
-var hyper = new libvirt.Hypervisor('qemu:///system');
+var hyper = new libvirt.Hypervisor(process.env.RUNTIME_REMOTE);
 
 module.exports = function (args, cb) {
   console.log(args._[0]);

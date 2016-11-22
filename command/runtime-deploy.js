@@ -2,7 +2,8 @@
 
 var fs = require('fs');
 var libvirt = require('libvirt');
-var hyper = new libvirt.Hypervisor('qemu:///system');
+var hyper = new libvirt.Hypervisor(process.env.RUNTIME_REMOTE);
+
 var randomstring = require("randomstring");
 
 
@@ -37,9 +38,6 @@ var bootDomain = (name) => {
 
 module.exports = function (args, cb) {
   console.log("Deploy a runtime.js VM with Libvirt.");
-
-
-  // var xml = fs.readFileSync(args.domain);
 
   hyper.connect( err => {
     if (!err) {

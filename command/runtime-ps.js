@@ -1,7 +1,7 @@
 'use strict'
 
 var libvirt = require('libvirt');
-var hyper = new libvirt.Hypervisor('qemu:///system');
+var hyper = new libvirt.Hypervisor(process.env.RUNTIME_REMOTE);
 
 var domainName = (val) => {
   for (var i = 0; i < val.length; i++) {
