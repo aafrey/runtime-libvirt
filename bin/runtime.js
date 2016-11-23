@@ -73,6 +73,13 @@ var mkimgArgs = [
     description: 'Label of the new image, defaults to "RUNTIMEJS"' }
 ];
 
+var defineArgs = [
+  { name: 'domain', type: 'string', default: '',
+    description: 'libvirt domain .xml' },
+  { name: 'name', type: 'string', default: '',
+    description: 'give your VM a name' }
+];
+
 var deployArgs = [
   { name: 'domain', type: 'string', default: '',
     description: 'libvirt domain .xml' },
@@ -88,6 +95,13 @@ var psArgs = [
   { name: 'a', type: 'boolean', default: false,
     description: 'list all registered runtime.js VM\'s' }
 ];
+
+var infoArgs = [
+  { name: 'stats', type: 'boolean', default: false,
+    description: 'list important runtimejs instance information' },
+  { name: 'os', type: 'boolean', default: false,
+    description: 'list OS type' }
+]
 
 var cmds = [{
   name: 'start',
@@ -132,6 +146,16 @@ var cmds = [{
   name: 'destroy',
   description: 'destroy VM by name',
   mainArg: { name: 'domain', description: 'Libvirt domain to destroy'}
+}, {
+  name: 'define',
+  description: 'create/define a runtime VM instance from a libvirt domain XML. Image is created but not started',
+  args: defineArgs,
+  mainArg: { name: 'domain', description: 'Libvirt domain to create'}
+}, {
+  name: 'info',
+  description: 'print VM info to console',
+  args: infoArgs,
+  mainArg: {name: 'domain', description: 'name of the runtimejs instance'}
 }];
 
 function help() {
