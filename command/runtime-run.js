@@ -70,7 +70,7 @@ module.exports = function(args, cb) {
 
   getRuntime(fileData.kernelVer, kernelFile, !!args.local, function(err, runtimeFile) {
     if (err) {
-      return cb(err)
+      return cb(err);
     }
 
     kernelFile = runtimeFile;

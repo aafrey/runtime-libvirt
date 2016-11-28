@@ -1,12 +1,12 @@
 <domain type='qemu'>
-  <name>runtime-2</name>
+  <name>{{name}}</name>
   <memory unit='KiB'>524288</memory>
   <currentMemory unit='KiB'>524288</currentMemory>
   <vcpu placement='static'>1</vcpu>
   <os>
     <type arch='x86_64' machine='ubuntu'>hvm</type>
-    <kernel>/var/lib/libvirt/images/runtime.2062</kernel>
-    <initrd>/var/lib/libvirt/images/.initrd</initrd>
+    <kernel>/var/lib/libvirt/images/.runtime/runtime.2062</kernel>
+    <initrd>/var/lib/libvirt/images/{{initrd}}</initrd>
     <cmdline>9000</cmdline>
   </os>
   <features>

@@ -4,6 +4,7 @@
     "console": true,
     "require": true,
     "Buffer": true,
-    "module": true
+    "module": true,
+    "process": true
   }
 }

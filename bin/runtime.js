@@ -101,7 +101,7 @@ var infoArgs = [
     description: 'list important runtimejs instance information' },
   { name: 'os', type: 'boolean', default: false,
     description: 'list OS type' }
-]
+];
 
 var cmds = [{
   name: 'start',
