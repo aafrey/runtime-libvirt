@@ -1,4 +1,6 @@
 # runtime-cli
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/aafrey/runtime-libvirt.svg)](https://greenkeeper.io/)
 Command line tools for `runtime.js`.
 
 [![Build Status](https://travis-ci.org/runtimejs/runtime-cli.svg?branch=master)](https://travis-ci.org/runtimejs/runtime-cli)
