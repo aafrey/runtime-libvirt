@@ -37,7 +37,7 @@
     "tabtab": "0.0.4"
   },
   "devDependencies": {
-    "eslint": "^1.10.3",
+    "eslint": "^6.6.0",
     "eslint-config-runtime": "^1.0.0",
     "eslint-plugin-runtime-internal": "^1.0.0",
     "mock-fs": "^3.11.0",
